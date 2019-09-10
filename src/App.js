@@ -79,7 +79,7 @@ displayFaceBox = (box) => {
       method: 'post',
       headers: {'Content-Type': 'application/json'},
       body: JSON.stringify({
-        id: this.state.input
+        input: this.state.input
       })
     })
     .then(response => response.json())
@@ -97,6 +97,7 @@ displayFaceBox = (box) => {
             this.setState(Object.assign(this.state.user, { entries: count}))
           })
           .catch(console.log)
+          
       }
       this.displayFaceBox(this.calculateFaceLocation(response))
     })
